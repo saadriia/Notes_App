@@ -80,14 +80,14 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Poppins
-    - family: Smiles  
+    - family: Bentham
+    
       fonts:
-        - asset: assets/fonts/Poppins-Regular.ttf
-        - asset: assets/fonts/Cairo.ttf
-        - asset: assets/fonts/Flamante-Cairo.ttf
-        - asset: assets/fonts/Power Entry.otf
-        - asset: assets/fonts/Smiles.otf
+        - asset: assets/fonts/Bentham-Regular.ttf
+        # - asset: assets/fonts/Cairo.ttf
+        # - asset: assets/fonts/Flamante-Cairo.ttf
+        # - asset: assets/fonts/Power Entry.otf
+        # - asset: assets/fonts/Smiles.otf
 
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
