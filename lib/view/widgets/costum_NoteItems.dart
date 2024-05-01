@@ -18,17 +18,17 @@ class NoteItem extends StatelessWidget {
         children: [
           ListTile(
             title: const Text(
-              'Flutter Tips',
-              style: TextStyle(     color: Colors.black, fontSize: 26,    ),
+              'Flutter Tips(باب دمشق)',
+              style: TextStyle(     color: Colors.black, fontSize: 26, fontWeight: FontWeight.bold    ),
             ),
-            subtitle:   Padding(
-              padding: const EdgeInsets.only(
+            subtitle:   const Padding(
+              padding:   EdgeInsets.only(
                 top: 16,
                 bottom: 16,
               ),
               child: Text(
-                'Build your First App with prgraming with flutter code',
-                style: TextStyle(color: Colors.black45, fontSize: 18),
+                'Build your First App with prgraming with flutter  code',
+                style: TextStyle(color: Colors.black45, fontSize: 18 , fontWeight: FontWeight.bold),
               ),
             ),
             trailing: IconButton(

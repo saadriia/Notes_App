@@ -16,7 +16,7 @@ class NotsApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(brightness: Brightness.dark ,
-     fontFamily:'Cairo',
+     fontFamily:'Bentham', 
      
   
       ),
