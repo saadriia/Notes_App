@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
-import "package:font_awesome_flutter/font_awesome_flutter.dart";
+import "package:notes_app/view/widgets/ListView_note.dart";
+//import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import "package:notes_app/view/widgets/costum_NoteItems.dart";
 //import "package:notes_app/view/widgets/Custom_AppBar.dart";
 
@@ -10,10 +11,9 @@ class NotsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
+    return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20),
       child: Column(
-        
         children: [
           SizedBox(
             height: 30,
@@ -22,7 +22,10 @@ class NotsViewBody extends StatelessWidget {
           SizedBox(
             height: 40,
           ),
-          NoteItem(),
+          Expanded(child:NotsListView(),
+
+),
+
         ],
       ),
     );
