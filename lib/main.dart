@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:notes_app/view/widgets/Constants.dart';
 //import 'package:notes_app/view/Nots_view.dart';
 
 import 'view/Nots_view.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+
+await  Hive.openBox(kNotesBox);
   runApp(const NotsApp());
 }
 
@@ -12,16 +17,14 @@ class NotsApp extends StatelessWidget {
 
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) { 
+  Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(brightness: Brightness.dark ,
-     fontFamily:'Bentham', 
-     
-  
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        fontFamily: 'Bentham',
       ),
-      home:const  NotsView(),
+      home: const NotsView(),
     );
   }
-
-  }
+}
