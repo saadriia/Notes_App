@@ -18,7 +18,9 @@ class NotsViewBody extends StatelessWidget {
           SizedBox(
             height: 30,
           ),
-          customAppBar(),
+          customAppBar(
+      
+          ),
           SizedBox(
             height: 40,
           ),
