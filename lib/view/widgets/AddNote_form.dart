@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/cubits/add_Note_cubit/addnotes_cubit.dart';
+import 'package:notes_app/models/Note_modele.dart';
 
 import 'Custom_TexetField.dart';
 import 'custom_Button.dart';
 
- 
 class AddNoteForm extends StatefulWidget {
   const AddNoteForm({
     super.key,
@@ -45,15 +47,19 @@ class _AddNoteFormState extends State<AddNoteForm> {
           const SizedBox(
             height: 40,
           ),
-            customButton(
+          customButton(
             onTap: () {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
-              }else {
-                autovalidateMode=AutovalidateMode.always;
-                setState(() {
-                  
-                });
+                var noteModel = NoteModel(
+                    title: title!,
+                    subtitle: subTitle!,
+                    date: DateTime.now().toString(),
+                    color: Colors.grey.value);
+                BlocProvider.of<NotesCubit>(context).addNote(noteModel);
+              } else {
+                autovalidateMode = AutovalidateMode.always;
+                setState(() {});
               }
             },
           )

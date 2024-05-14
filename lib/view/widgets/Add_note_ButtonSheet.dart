@@ -22,9 +22,10 @@ class _AddNoteButtonSheatState extends State<AddNoteButtonSheat> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: SingleChildScrollView(
+    return BlocProvider(
+      create: (context) => NotesCubit(),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         child: BlocConsumer<NotesCubit, AddNotesState>(
           listener: (context, state) {
             if (state is AddNoteFailure) {
@@ -37,7 +38,7 @@ class _AddNoteButtonSheatState extends State<AddNoteButtonSheat> {
           builder: (context, state) {
             return ModalProgressHUD(
                 inAsyncCall: state is AddNoteLoading ? true : false,
-                child: const AddNoteForm());
+                child: const SingleChildScrollView(child: AddNoteForm()));
           },
         ),
       ),
